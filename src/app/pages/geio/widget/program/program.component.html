@@ -1,0 +1,56 @@
+<!-- section start -->
+<section class="section-b-space" style="padding-top: 0; padding-bottom: 0;">
+    <div class="col-md-12 program">
+        <div class="program-list visible-sm-hide">
+            <img *ngIf="image" src="{{image}}" alt="">
+            <div class="m-text">
+                <h3 *ngIf="judul">{{judul}}</h3>
+                <p *ngIf="desc">{{desc}}</p>
+            </div>
+        </div>
+        <div class="program-list-btn visible-sm-hide">
+            <a href="javascript:;" id="acti" (mouseover)='activityover()'>
+                <img data-src="{{imgUrl}}/images/front/pic35.jpg" src="{{imgUrl}}/images/front/pic35.jpg">
+                <span>Teach Through Lively Activities</span>
+            </a>
+            <a href="javascript:;" id="easy" (mouseover)='easyover()'>
+                <img data-src="{{imgUrl}}/images/front/pic36.jpg" src="{{imgUrl}}/images/front/pic36.jpg">
+                <span>Easy To Use</span>
+            </a>
+            <a href="javascript:;" id="edu" (mouseover)='eduover()'>
+                <img data-src="{{imgUrl}}/images/front/pic37.jpg" src="{{imgUrl}}/images/front/pic37.jpg">
+                <span>Family Education</span>
+            </a>
+        </div>
+
+        <div class="visible-sm-show" style="display: none;">
+            <img src="{{imgUrl}}/images/front/pic34.jpg" alt="">
+            <div class="m-text">
+                <h3>Teach Through Lively Activities</h3>
+                <p>Integrate entertainment and education, and let your children master basic programming knowledge in a happy game.</p>
+            </div>
+        </div>
+        <div class="visible-sm-show" style="display: none;">
+            <img src="{{imgUrl}}/images/front/pic12.png" alt="">
+            <div class="m-text">
+                <h3>Easy To Use</h3>
+                <p>Use the most popular graphical programming methods to make programming easy to understand.</p>
+            </div>
+        </div>
+        <div class="visible-sm-show" style="display: none;">
+            <img src="{{imgUrl}}/images/front/pic13.png" alt="">
+            <div class="m-text">
+                <h3>Family Education</h3>
+                <p>Let GEIO be the bridge between parents and children, and use programming games to make parents and children more intimate. At the same time,the initial education of the child can be completed at home.</p>
+            </div>
+        </div>
+        <div class="visible-sm-show" style="display: none;">
+            <img src="{{imgUrl}}/images/front/pic34.jpg" alt="">
+            <div class="m-text">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section end -->

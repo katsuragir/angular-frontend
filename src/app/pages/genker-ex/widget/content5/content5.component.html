@@ -1,0 +1,13 @@
+<!-- section start -->
+<section class="section-b-space" style="background-color: #191819;">
+    <div class="container">
+        <ngx-slick-carousel class="no-arrow" #slickModal="slick-carousel" [config]="logoSlideConfig">
+            <div ngxSlickItem *ngFor="let lg of logo">
+                <div style="margin-left: 10px; margin-right: 10px;">
+                    <img [src]="lg.image" alt="" style="object-fit: scale-down; width: 100%; height: auto;">
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</section>
+<!-- section end -->

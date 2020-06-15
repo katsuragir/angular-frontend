@@ -1,0 +1,54 @@
+<!-- Home slider -->
+<section class="p-0">
+  <ngx-slick-carousel class="home-slider" #slickModal="slick-carousel" [config]="sliderConfig">
+    <div ngxSlickItem>
+      <div *ngIf="innerWidth > 480 || !innerWidth">
+        <a href="javascript:">
+          <img class="home text-center" style="object-fit: cover;width: 100%;" src="{{imgUrl}}/images/front/ganker_banner_copy.jpg">
+        </a>
+      </div>
+      <div *ngIf="innerWidth <= 480">
+        <a href="javascript:">
+          <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;margin-top: 76px;" src="{{imgUrl}}/images/front/ganker_banner_vertical.jpg">
+        </a>
+      </div>
+      <!--<div class="home home1 text-center">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="slider-contain">
+                <div>
+                  <h4>welcome to fashion</h4>
+                  <h1>Men fashion</h1>
+                  <a [routerLink]="'/home/left-sidebar/collection/men'" class="btn btn-solid">shop now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>-->
+    </div>
+    <!--
+    <div ngxSlickItem>
+      <div class="home home2 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="slider-contain">
+                <div>
+                  <h4>welcome to fashion</h4>
+                  <h1>Women fashion</h1>
+                  <a [routerLink]="'/home/left-sidebar/collection/women'" class="btn btn-solid">shop now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+  </ngx-slick-carousel>
+</section>
+<!-- Home slider end -->

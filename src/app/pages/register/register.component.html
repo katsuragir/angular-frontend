@@ -1,0 +1,366 @@
+<!-- breadcrumb start -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-title">
+                    <h2>Register</h2>
+                </div>
+            </div>
+            <!--
+            <div class="col-sm-6">
+                <nav aria-label="breadcrumb" class="theme-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">create account</li>
+                    </ol>
+                </nav>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+<!-- breadcrumb End -->
+<!-- section start -->
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" *ngIf="!login">
+                
+                <div class="theme-card">
+                    <app-auth-notice [show]="show"></app-auth-notice>
+                    <form class="theme-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                        <div class="judul-regist">
+                            <h4>Customer Data</h4>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">
+                                <label for="email">First Name</label>
+                                <input type="text" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" class="form-control" id="fname" placeholder="First Name" required="" formControlName="firstname">
+                            </div>
+                            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                            </div>
+                            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstname.errors.minlength">First Name must be at least 3 characters</div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="review">Last Name</label>
+                                <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="lastname">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">Alias</label>
+                                <input type="text" [ngClass]="{ 'is-invalid': submitted && f.alias.errors }" class="form-control" id="alias" formControlName="alias" placeholder="Pilot Callsign" required="">
+                                
+                            </div>
+                            <div *ngIf="submitted && f.alias.errors" class="invalid-feedback">
+                                <div *ngIf="f.alias.errors.required">Alias is required</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" class="form-control" id="email" placeholder="Email" formControlName="email" required="">
+                                
+                            </div>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                            </div>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.email">Invalid Format</div>
+                            </div>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.minlength">email must be at least 10 characters</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Phone</label>
+                                <input type="text" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" class="form-control" id="review" placeholder="example: +6282124125488" maxlength="15"  (keypress)="phoneNumber($event)" formControlName="phone" required="">
+                                
+                            </div>
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Date of Birth</label>
+                                <input [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" class="form-control"  type="date" formControlName="dob" required>
+                                
+                            </div>
+                            <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                                <div *ngIf="f.dob.errors.required">Date Of Birth is required</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">City</label>
+                                <input list="cities" name="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" formControlName="city" class="form-control" placeholder="select a City">
+                                <datalist id="cities">
+                                    <option *ngFor="let city of city" value="{{city.city_name}} {{city.type}}">
+                                </datalist>
+                                
+                            </div>
+                            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                <div *ngIf="f.city.errors.required">City is required</div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-bottom: 10px;">
+                            <div class="col-md-6">
+                                <label for="review">Password *</label>
+                                <show-hide-password size="sm" btnStyle="primary" [btnOutline]="false">
+                                  <input type="password" style="margin:unset;" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" class="form-control" id="password" placeholder="Enter your password" required="" formControlName="password">
+                                </show-hide-password>
+                                <span style="color: red; font-size: 12px; font-weight: 400;">*Minimum 6 characters, at least one uppercase letter, one lowercase letter and one number</span>
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                </div>
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Confirm Password</label>
+                                <show-hide-password size="sm" btnStyle="primary" [btnOutline]="false">
+                                  <input type="password" style="margin:unset;" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" class="form-control" id="confirmPassword" placeholder="Confirm password" required="" formControlName="confirmPassword">
+                                </show-hide-password>
+                                <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="judul-regist">
+                            <h4>Purchase Data</h4>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Robot Type</label>
+                                <select style="margin-bottom: 10px;" [ngClass]="{ 'is-invalid': submitted && f.robot.errors }" formControlName="robot" class="form-control" required>
+                                    <option value="" selected>Select Type</option>
+                                    <option value="GEIO RED">GEIO RED</option>
+                                    <option value="GEIO BLUE">GEIO BLUE</option>
+                                    <option value="GANKER EX">GANKER EX</option>
+                                </select>
+                                <div *ngIf="submitted && f.robot.errors" class="invalid-feedback">
+                                    <div *ngIf="f.robot.errors.required">Robot Type is required</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Purchase Date</label>
+                                <input [ngClass]="{ 'is-invalid': submitted && f.PurchaseDate.errors }" class="form-control"  type="date" formControlName="PurchaseDate" required>
+                                <div *ngIf="submitted && f.PurchaseDate.errors" class="invalid-feedback">
+                                    <div *ngIf="f.PurchaseDate.errors.required">Purchase Date is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Shop Name</label>
+                                <input type="text" [ngClass]="{ 'is-invalid': submitted && f.shopname.errors }" class="form-control" id="shop" placeholder="Shop Name" formControlName="shopname" required="">
+                                <div *ngIf="submitted && f.shopname.errors" class="invalid-feedback">
+                                    <div *ngIf="f.shopname.errors.required">Shop Name is required</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Location</label>
+                                <textarea rows="4" cols="50" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" style="margin-bottom: 10px;" id="location" placeholder="Location" formControlName="location"></textarea>
+                                <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                                    <div *ngIf="f.location.errors.required">Location is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Photo ID</label>
+                                                                
+                                <input
+                                ngf
+                                type      = "file"
+                                accept    = ".jpeg,.png"
+                                [(files)] = "photoID"
+                                maxSize   = "1048576"
+                                class="form-control" id="photo" placeholder="Photo ID" [ngClass]="{ 'is-invalid': submitted && f.photo.errors }"  formControlName="photo" (change)="photo($event)" required="" style="margin-bottom: 0;">
+                                <br />
+                                <span style="color: red; font-size: 12px; margin-bottom: 5px;">*File must be .JPG / .PNG and size below 1MB</span>
+                                <div *ngIf="submitted && f.photo.errors" class="invalid-feedback">
+                                    <div *ngIf="f.photo.errors.required">Photo ID is required</div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Purchase Receipt</label>
+                                                                
+                                <input 
+                                ngf
+                                type      = "file"
+                                accept    = ".jpeg,.png"
+                                [(files)] = "PurchRect"
+                                maxSize   = "1048576"
+                                class="form-control" id="Receipt" placeholder="Purchase Receipt" [ngClass]="{ 'is-invalid': submitted && f.purch.errors }" (change)="purch($event)" formControlName="purch" required="" style="margin-bottom: 0;">
+                                <br />
+                                <span style="color: red; font-size: 12px; margin-bottom: 5px;">*File must be .JPG / .PNG and size below 1MB</span>
+                                <div *ngIf="submitted && f.purch.errors" class="invalid-feedback">
+                                    <div *ngIf="f.purch.errors.required">Purchase Receipt is required</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row">
+                                <div class="col-md-12" style="margin-top: 10px; margin-bottom: 5px;">
+                                    <input type="checkbox" name="agree" formControlName="agree">
+                                    I agree the <a [routerLink]="['/pages/terms-and-condition']">terms & conditions </a> and <a [routerLink]="['/pages/privacy-policy']">Privacy Policy</a>
+                                </div>
+                            <button class="btn btn-solid">Register</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <!---->
+
+            <div class="col-lg-12" *ngIf="login">
+                <div class="theme-card" style="margin-bottom: 10px; border: none;" *ngIf="regist">
+                    <div class="theme-form">
+                        <div class="judul-regist">
+                            <h4>Customer Data</h4>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 data-customer">
+                                <div class="form-row">
+                                    <table style="margin: 0 15px; line-height: 30px; width: 100%;">
+                                            <td>
+                                                <tr>ID Register    </tr>
+                                                <tr>Name   </tr>
+                                                <tr>Alias   </tr>
+                                                <tr>Email </tr>
+                                                <tr>Phone </tr>
+                                                <tr>Date of Birth </tr>
+                                                <tr>City </tr>
+                                                <tr>Register Robot List</tr>
+                                            </td>
+                                            <td>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                                <tr>:</tr>
+                                            </td>
+                                            <td>
+                                                <tr>{{regist.idregist}}</tr>
+                                                <tr>{{regist.firstname}} {{regist.lastname}}</tr>
+                                                <tr>{{regist.alias}}</tr>
+                                                <tr>{{regist.email}}</tr>
+                                                <tr>{{regist.phone}}</tr>
+                                                <tr>{{regist.dob | date: 'dd MMMM yyyy'}}</tr>
+                                                <tr>{{regist.city}}</tr>
+                                                <tr *ngIf="!found">No Records Found</tr>
+                                                <tr *ngFor="let sale of sales | slice:0:5; let i = index;">
+                                                    <td>{{i+1}}. {{sale.robotType}}</td>
+                                                    <td>{{sale.purchDate | date: 'dd MMMM yyyy'}}</td>
+                                                </tr>
+                                            </td>
+                                    </table>
+                                </div>                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="theme-card">
+                    <app-auth-notice [show]="show"></app-auth-notice>
+                    <form class="theme-form" [formGroup]="salesForm" (ngSubmit)="onSales()" autocomplete="off">
+                        <div class="judul-regist">
+                            <h4>Purchase Data</h4>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Robot Type</label>
+                                <select style="margin-bottom: 10px;" [ngClass]="{ 'is-invalid': submitted && s.robot.errors }" formControlName="robot" class="form-control" required>
+                                    <option value="" selected>Select Type</option>
+                                    <option value="GEIO RED">GEIO RED</option>
+                                    <option value="GEIO BLUE">GEIO BLUE</option>
+                                    <option value="GANKER EX">GANKER EX</option>
+                                </select>
+                                <div *ngIf="submitted && s.robot.errors" class="invalid-feedback">
+                                    <div *ngIf="s.robot.errors.required">Robot Type is required</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Purchase Date</label>
+                                <input [ngClass]="{ 'is-invalid': submitted && s.PurchaseDate.errors }" class="form-control"  type="date" formControlName="PurchaseDate" required>
+                                <div *ngIf="submitted && s.PurchaseDate.errors" class="invalid-feedback">
+                                    <div *ngIf="s.PurchaseDate.errors.required">Purchase Date is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Shop Name</label>
+                                <input type="text" [ngClass]="{ 'is-invalid': submitted && s.shopname.errors }" class="form-control" id="shop2" placeholder="Shop Name" formControlName="shopname" required="">
+                                <div *ngIf="submitted && s.shopname.errors" class="invalid-feedback">
+                                    <div *ngIf="s.shopname.errors.required">Shop Name is required</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Location</label>
+                                <textarea rows="4" cols="50" class="form-control" [ngClass]="{ 'is-invalid': submitted && s.location.errors }" style="margin-bottom: 10px;" id="location2" placeholder="Location" formControlName="location"></textarea>
+                                <div *ngIf="submitted && s.location.errors" class="invalid-feedback">
+                                    <div *ngIf="s.location.errors.required">Location is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label for="email">Photo ID</label>
+                                                                
+                                <input
+                                ngf
+                                type      = "file"
+                                accept    = ".jpeg,.png"
+                                [(files)] = "photoID"
+                                maxSize   = "1048576"
+                                class="form-control" id="photo2" placeholder="Photo ID" [ngClass]="{ 'is-invalid': submitted && s.photo.errors }"  formControlName="photo" (change)="photo($event)" required="" style="margin-bottom: 0;">
+                                <br />
+                                <span style="color: red; font-size: 12px; margin-bottom: 5px;">*File must be .JPG / .PNG and size below 1MB</span>
+                                <div *ngIf="submitted && s.photo.errors" class="invalid-feedback">
+                                    <div *ngIf="s.photo.errors.required">Photo ID is required</div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Purchase Receipt</label>
+                                                                
+                                <input 
+                                ngf
+                                type      = "file"
+                                accept    = ".jpeg,.png"
+                                [(files)] = "PurchRect"
+                                maxSize   = "1048576"
+                                class="form-control" id="Receipt2" placeholder="Purchase Receipt" [ngClass]="{ 'is-invalid': submitted && s.purch.errors }" (change)="purch($event)" formControlName="purch" required="" style="margin-bottom: 0;">
+                                <br />
+                                <span style="color: red; font-size: 12px; margin-bottom: 5px;">*File must be .JPG / .PNG and size below 1MB</span>
+                                <div *ngIf="submitted && s.purch.errors" class="invalid-feedback">
+                                    <div *ngIf="s.purch.errors.required">Purchase Receipt is required</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-row">
+                                <div class="col-md-12" style="margin-top: 10px; margin-bottom: 5px;">
+                                    <input type="checkbox" name="agree" formControlName="agree">
+                                    I agree the <a [routerLink]="['/pages/terms-and-condition']">terms & conditions </a> and <a [routerLink]="['/pages/privacy-policy']">Privacy Policy</a>
+                                </div>
+                            <button class="btn btn-solid">Register</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--Section ends-->

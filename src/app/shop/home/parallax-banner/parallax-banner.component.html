@@ -1,0 +1,157 @@
+<!-- Parallax banner -->
+<section class="p-0">
+  <div class="full-banner parallax text-center p-left">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="tab-button">
+            <div class="item-menu">
+              <ul class="nav nav-tabs nav-material" style="margin-bottom: 15px; place-content: center; border-bottom: none;" id="top-tab" role="tablist" >
+                <li class="nav-item">
+                  <a style="text-transform: none;" class="nav-link active" id="club-tab" data-toggle="tab" href="#club" role="tab" aria-selected="true">
+                    <i class="icofont icofont-ui-home"></i>Club</a>
+                  <div class="material-border"></div>
+                </li>
+    
+                <li class="nav-item" >
+                  <a style="text-transform: none;" class="nav-link" id="creative-tab" data-toggle="tab" href="#creative" role="tab" aria-selected="false"><i class="icofont icofont-man-in-glasses"></i>Creative</a>
+                  <div class="material-border"></div>
+                </li>
+    
+                <li class="nav-item">
+                  <a style="text-transform: none;" class="nav-link" id="contest-tab" data-toggle="tab" href="#contest" role="tab" aria-selected="false">
+                  <i class="icofont icofont-contacts"></i>Contest</a>
+                  <div class="material-border"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="tab-content nav-material" id="top-tabContent">
+              <div class="tab-pane fade show active" id="club" role="tabpanel" aria-labelledby="club-tab">
+                <div class="row">
+                  <div class="col-9">
+                    <ngx-slick-carousel class="home-slider" #slickModal="slick-carousel" [config]="sliderConfig">
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/fans.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/fans1-big.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/fans2-big.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/fans3-big.jpg" alt="">
+                        </div>
+                      </div>
+                    </ngx-slick-carousel>
+                  </div>
+                  <div class="col-3" style="padding-left: 0;">
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/fans1-big.jpg" alt="">
+                    </div>
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/fans2-big.jpg" alt="">
+                    </div>
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/fans3-big.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="tab-pane fade show" id="creative" role="tabpanel" aria-labelledby="creative-tab">
+                <div class="row">
+                  <div class="col-9">
+                    <ngx-slick-carousel class="home-slider" #slickModal="slick-carousel" [config]="sliderConfig2">
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover; width: 100%; height: auto;" src="{{imgUrl}}/images/front/user-work.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover; width: 100%; height: auto;" src="{{imgUrl}}/images/front/user-work1-big.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover; width: 100%; height: auto;" src="{{imgUrl}}/images/front/user-work2-big.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover; width: 100%; height: auto;" src="{{imgUrl}}/images/front/user-work3-big.jpg" alt="">
+                        </div>
+                      </div>
+                    </ngx-slick-carousel>
+                  </div>
+                  <div class="col-3" style="padding-left: 0;">
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/user-work1-big.jpg" alt="">
+                    </div>
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/user-work2-big.jpg" alt="">
+                    </div>
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/user-work3-big.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="tab-pane fade show" id="contest" role="tabpanel" aria-labelledby="contest-tab">
+                <div class="row">
+                  <div class="col-9">
+                    <ngx-slick-carousel class="home-slider" #slickModal="slick-carousel" [config]="sliderConfig3">
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/index-game.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/index-game1-big.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/index-game2-big.jpg" alt="">
+                        </div>
+                      </div>
+                      <div ngxSlickItem>
+                        <div >
+                            <img class="home text-center" style="object-fit: cover;width: 100%;height: auto;" src="{{imgUrl}}/images/front/index-game3-big.jpg" alt="">
+                        </div>
+                      </div>
+                    </ngx-slick-carousel>
+                  </div>
+                  <div class="col-3" style="padding-left: 0;">
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/index-game1-big.jpg" alt="">
+                    </div>
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/index-game2-big.jpg" alt="">
+                    </div>
+                    <div class="col-12" style="padding-left: 0; padding-right: 0;">
+                      <img class="img-fluid" style="margin-bottom: 5px;" src="{{imgUrl}}/images/front/index-game3-big.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Parallax banner end -->

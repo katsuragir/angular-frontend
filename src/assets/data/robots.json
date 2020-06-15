@@ -1,0 +1,53 @@
+[{
+    "id": 1,
+    "name": "GEIO",
+    "price": 0,
+    "salePrice": 0,
+    "discount": 0,
+    "pictures": ["https://api.gjsrobots.id/api/images/front/GEIO-red.png", "https://api.gjsrobots.id/api/images/front/GEIO-blue.png"],
+    "shortDetails": "",
+    "description": "",
+    "stock": 0,
+    "new": true,
+    "sale": true,
+    "slug": "geio",
+    "category": "geio",
+    "colors": ["red", "blue"],
+    "size": ["M", "L", "XL"],
+    "tags": ["nike", "caprese", "lifestyle"],
+    "variants": [
+    {
+      "color": "red",
+      "images": "https://api.gjsrobots.id/api/images/front/GEIO-red.png"
+    },
+    {
+      "color": "blue",
+      "images": "https://api.gjsrobots.id/api/images/front/GEIO-blue.png"
+    }]
+  },
+  {
+    "id": 2,
+    "name": "GANKER EX",
+    "price": 0,
+    "salePrice": 0,
+    "discount": 0,
+    "pictures": ["https://api.gjsrobots.id/api/images/front/GANKEREX.png"],
+    "shortDetails": "",
+    "description": "",
+    "stock": 0,
+    "new": true,
+    "sale": false,
+    "slug": "ganker-ex",
+    "category": "ganker EX",
+    "colors": ["grey"],
+    "size": ["M", "L", "XL"],
+    "tags": ["caprese", "puma", "lifestyle"],
+    "variants": [
+    {
+      "color": "grey",
+      "images": "https://api.gjsrobots.id/api/images/front/GANKEREX.png"
+    }]
+  }
+  ]
+  
+  

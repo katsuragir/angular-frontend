@@ -1,0 +1,193 @@
+
+<!-- about section start -->
+<section class="about-page  section-b-space" style="padding-top: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="item-menu">
+                    <ul class="nav nav-tabs nav-material" style="margin-bottom: 15px; justify-content: center;" id="top-tab" role="tablist" >
+                        <!--
+                        <li class="nav-item">
+                            <a style="text-transform: none;" class="nav-link" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-selected="true"><i class="icofont icofont-ui-home"></i>News</a>
+                            <div class="material-border"></div>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <a style="text-transform: none;" class="nav-link" id="images-tab" #images data-toggle="tab" href="#images" role="tab" aria-selected="false"><i class="icofont icofont-man-in-glasses"></i>Images</a>
+                            <div class="material-border"></div>
+                        </li>
+            
+                        <li class="nav-item">
+                            <a style="text-transform: none;" class="nav-link" id="videos-tab" data-toggle="tab" href="#videos" role="tab" aria-selected="false"><i class="icofont icofont-contacts"></i>Videos</a>
+                            <div class="material-border"></div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="tab-content nav-material" id="top-tabContent">
+                    <!--
+                    <div class="tab-pane fade show" id="news" role="tabpanel" aria-labelledby="news-tab">
+                        <div class="container">
+                            Comming Soon
+                        </div>
+                    </div>
+                    -->
+                    <div class="tab-pane fade show" id="images" role="tabpanel" aria-labelledby="images-tab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12" style="justify-content: space-between; display: flex;">
+                                    <div class="row" style="width: 100%;">
+                                        <div class="col-md-6 pic-col1">
+                                            <div style="margin-bottom: 35px;">
+                                                <a href="javascript:;">GEIO Picture Kit</a>
+                                            </div>
+                                            <div class="pic-col2" style="margin-bottom: 35px;">
+                                                <a href="javascript:;">Download</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6" >
+                                           <ngx-slick-carousel class="home-slider" #slickModal="slick-carousel" [config]="sliderConfig">
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/battle_e.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/Blue02.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/Family.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/GEIO.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/gift_g.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/Programming.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div ngxSlickItem>
+                                                    <div >
+                                                        <img class="home text-center" style="object-fit: scale-down;width: 100%;height: auto;" src="{{imgUrl}}/images/front/Red02.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </ngx-slick-carousel>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="tab-pane fade show" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+                        <div class="container">
+                            <div class="row">
+                                
+                                <div class="col-md-12 video-list ovhid" style="padding-top: 10px;">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('8HZOrMgCFWI')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—BATTLE</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('nigYCE3rub0')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—DRIVE</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('HbW6YX0Q1PI')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—EXPLORE</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('tIRtd8INW_s')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—KNIGHT</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('FKzzv8uRSRw')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—PROGRAMMING</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('i3-5q-C4mms')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—TREASURE SNATCH</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('BTzSKy_O_Es')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—AR</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('l3Xe4mc8zb8')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO Mode—RACE</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="thumb" (click)="video('6_7tZl-BwGU')">
+                                                <a href="javascript:;">
+                                                    <img alt data-src="{{imgUrl}}/images/front/pic06.jpg" src="{{imgUrl}}/images/front/pic06.jpg" lazy="loaded">
+                                                </a>
+                                                <h5>GEIO TVC</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about section end -->
+
+<div id="gjs-video" class="gjs-video" style="display: none;">
+    <div class="videoContainer">
+        <img (click)="close()" src="data:image/png;base64,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" alt class="closeVideoImg">
+        <iframe style="width: 640px; height: 320px;" class="y-video" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" [src]="youtubeUrl" id="widget2">
+        </iframe>
+    </div>
+</div>

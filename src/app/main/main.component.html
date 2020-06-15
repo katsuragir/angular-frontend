@@ -1,0 +1,14 @@
+<app-header-one ></app-header-one>
+
+<div> <!-- Left sidebar menu only -->
+
+	<app-home *ngIf="url === '/'"></app-home>
+	
+	<router-outlet *ngIf="url !== '/'"></router-outlet>
+	
+	<app-footer-one></app-footer-one>
+	
+
+</div>
+	
+
