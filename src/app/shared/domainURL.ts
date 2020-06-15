@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class DomainURL {
 
   // tslint:disable-next-line: no-inferrable-types
-  public domain: string = 'https://api.gjsrobots.id/api';
-  public ongkir: string = 'https://api.gjsrobots.id/ongkir';
+  public domain: string = 'http://localhost/api';
+  public ongkir: string = 'http://localhost/ongkir';
 
 }
